@@ -5,10 +5,10 @@
       [class.started]="started"
       (click)="toggle()"
     >
-      {{started ? 'stop' : 'run'}}
+      {{started ? 'stop' : 'start'}}
     </span>
-    <span class="time">
-      00:36:45
+    <span class="duration">
+      {{seconds | duration}}
     </span>
   </div>
   <div class="current">

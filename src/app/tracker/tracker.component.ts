@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tracker.component.scss']
 })
 export class TrackerComponent implements OnInit {
-  started = false;
+  started = false
+  seconds = 1000
+  interval = null
 
   constructor() { }
 
@@ -15,5 +17,10 @@ export class TrackerComponent implements OnInit {
 
   toggle() {
     this.started = !this.started;
+    if (this.started) {
+      this.interval = setInterval((() => this.seconds++), 1000)
+    } else {
+      clearInterval(this.interval)
+    }
   }
 }

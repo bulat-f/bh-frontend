@@ -24,6 +24,13 @@
         background: #ff0000;
       }
     }
+
+    .duration {
+      float: right;
+      font-family: 'Roboto Mono', monospace;
+      font-weight: 500;
+      padding: 0.5rem 0;
+    }
   }
 
   .current {
@@ -40,6 +47,7 @@
       .current-task-time {
         float: right;
         color: #d0d0d0;
+        font-family: 'Roboto Mono', monospace;
         font-size: 0.9rem;
       }
     }

@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { TrackerComponent } from './tracker/tracker.component';
+import { DurationPipe } from './duration.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TrackerComponent
+    TrackerComponent,
+    DurationPipe
   ],
   imports: [
     BrowserModule
