@@ -1,12 +1,17 @@
 .wrapper {
   background: #ffffff;
+  border: 1px #d0d0d0 solid;
   border-radius: 2px;
   max-width: 800px;
   min-width: 600px;
   padding: 1rem;
 
   .header {
-    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1.5rem;
+    border-bottom: 1px #d0d0d0 solid;
 
     .toggler {
       display: inline-block;
@@ -25,30 +30,68 @@
       }
     }
 
+    .current-project {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0.2rem 1rem;
+      border: 1px #ddd solid;
+      border-radius: 2px;
+    }
+
     .duration {
-      float: right;
       font-family: 'Roboto Mono', monospace;
       font-weight: 500;
       padding: 0.5rem 0;
     }
   }
 
-  .current {
-    padding: 0.2rem 1rem;
-    border: 1px #f0f0f0 solid;
-    border-radius: 2px;
+  .tasks-list {
+    padding: 1rem 0.8rem 0;
 
-    .current-project, .current-task {
-      display: block;
-      margin: 0.5rem 0;
-    }
+    .task {
+      padding: 1rem;
+      border-bottom: 1px #d0d0d0 solid;
+      cursor: pointer;
 
-    .current-task {
-      .current-task-time {
-        float: right;
-        color: #d0d0d0;
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:hover {
+        background: #f0f0ff;
+      }
+
+      &.active {
+        background: #f2f2ff;
+
+        .task-state {
+          background: #0a0;
+        }
+      }
+
+      span {
+        line-height: 2rem;
+      }
+
+      .task-state {
+        display: inline-block;
+        width: 0.8rem;
+        height: 0.8rem;
+        margin-right: 1rem;
+        border-radius: 0.4rem;
+        background: #aaa;
+      }
+
+      .task-title {
+        font-family: 'Roboto' sans-serif;
+        font-weight: 400;
+      }
+
+      .task-duration {
         font-family: 'Roboto Mono', monospace;
-        font-size: 0.9rem;
+        font-weight: 300;
+        float: right;
       }
     }
   }

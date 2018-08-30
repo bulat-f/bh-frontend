@@ -7,28 +7,23 @@
     >
       {{started ? 'stop' : 'start'}}
     </span>
+    <span class="current-project">
+      <strong>Current Project</strong>
+    </span>
     <span class="duration">
       {{seconds | duration}}
     </span>
   </div>
-  <div class="current">
-    <span class="current-project">
-      <strong>Project: </strong>
-      Poject Name
-    </span>
-    <span class="current-task">
-      <span>
-        <strong>Task: </strong>
-        Task Name
-        <span class="current-task-time">0:36:45</span>
-      </span>
-    </span>
-  </div>
   <div class="tasks-list">
-    <ul>
-      <li>task 1</li>
-      <li>task 2</li>
-      <li>task 3</li>
-    </ul>
+    <div
+      *ngFor="let task of tasks"
+      class="task"
+      [class.active]="activeTaskId === task.id"
+      (click)="onSelect(task.id)"
+    >
+      <div class="task-state"></div>
+      <span class="task-title">{{task.title}}</span>
+      <span class="task-duration">{{task.duration | duration}}</span>
+    </div>
   </div>
 </div>
