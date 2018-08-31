@@ -1,0 +1,49 @@
+.tasks-list {
+  padding: 1rem 0.8rem 0;
+
+  .task {
+    padding: 1rem;
+    border-bottom: 1px #d0d0d0 solid;
+    cursor: pointer;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      background: #f0f0ff;
+    }
+
+    &.active {
+      background: #f2f2ff;
+
+      .task-state {
+        background: #0a0;
+      }
+    }
+
+    span {
+      line-height: 2rem;
+    }
+
+    .task-state {
+      display: inline-block;
+      width: 0.8rem;
+      height: 0.8rem;
+      margin-right: 1rem;
+      border-radius: 0.4rem;
+      background: #aaa;
+    }
+
+    .task-title {
+      font-family: 'Roboto' sans-serif;
+      font-weight: 400;
+    }
+
+    .task-duration {
+      font-family: 'Roboto Mono', monospace;
+      font-weight: 300;
+      float: right;
+    }
+  }
+}

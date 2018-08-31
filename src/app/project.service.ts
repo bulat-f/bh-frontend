@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject, of } from 'rxjs'
+import { Observable, ReplaySubject, of } from 'rxjs'
 import { map, tap } from 'rxjs/operators';
 import { Project } from './project'
 import { Task } from './task'
@@ -10,10 +10,10 @@ import { PROJECTS } from './mocks'
 })
 export class ProjectService {
   currentProjectId: number
-  tasksObservable: Subject<Task[]>
+  tasksObservable: ReplaySubject<Task[]>
 
   constructor() {
-    this.tasksObservable = new Subject
+    this.tasksObservable = new ReplaySubject()
   }
 
   getProjects(): Observable<Project[]> {

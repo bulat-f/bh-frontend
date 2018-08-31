@@ -14,16 +14,5 @@
       {{seconds | duration}}
     </span>
   </div>
-  <div class="tasks-list">
-    <div
-      *ngFor="let task of tasks"
-      class="task"
-      [class.active]="activeTaskId === task.id"
-      (click)="onSelect(task.id)"
-    >
-      <div class="task-state"></div>
-      <span class="task-title">{{task.title}}</span>
-      <span class="task-duration">{{task.duration | duration}}</span>
-    </div>
-  </div>
+  <app-tasks-list></app-tasks-list>
 </div>

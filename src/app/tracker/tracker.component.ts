@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../project.service'
-import { Task } from '../task'
 
 @Component({
   selector: 'app-tracker',
@@ -12,13 +11,12 @@ export class TrackerComponent implements OnInit {
   seconds = 1000
   interval = null
   currentProjectId: number
-  tasks: Task[]
-  activeTaskId: number
 
   constructor(private projectService: ProjectService) { }
 
   ngOnInit() {
-    this.projectService.getTasks().subscribe((tasks: Task[]) => this.tasks = tasks)
+    console.log('TrackerComponent');
+    
     this.projectService.setCurrentProject(1).subscribe((id: number) => this.currentProjectId = id)
   }
 
@@ -29,9 +27,5 @@ export class TrackerComponent implements OnInit {
     } else {
       clearInterval(this.interval)
     }
-  }
-
-  onSelect(id) {
-    this.activeTaskId = id
   }
 }
