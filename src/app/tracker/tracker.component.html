@@ -7,8 +7,8 @@
     >
       {{started ? 'stop' : 'start'}}
     </span>
-    <span class="current-project">
-      <strong>Current Project</strong>
+    <span class="current-project" (click)="onSelect()">
+      <strong>{{currentProject && currentProject.name}}</strong>
     </span>
     <span class="duration">
       {{seconds | duration}}
